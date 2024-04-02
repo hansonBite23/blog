@@ -13,7 +13,7 @@ Route::get('/', function () {
 Route::resource('post', PostController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/view/{id}', [DashboardController::class, 'viewPost'])->name('view');
+Route::get('/{id}', [DashboardController::class, 'viewPost'])->name('view');
 
 
 

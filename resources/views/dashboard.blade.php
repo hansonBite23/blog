@@ -5,20 +5,16 @@
         </h2>
     </x-slot>
     
+        
+    <div class="container my-3">
+        <a href="{{route('post.create')}}" class="btn btn-primary float-end">Post Blog</a>
+    </div>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
-            <div class="">
-                <a href="{{route('post.create')}}" class="btn btn-primary">Post Blog</a>
-            </div>
-           
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                    @foreach ($posts as $post)
-                     
-
-
-
                     <div class="card m-3">
                         <div class="card-body">
                           <blockquote class="blockquote mb-0">
