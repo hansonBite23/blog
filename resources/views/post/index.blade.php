@@ -12,12 +12,21 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     
     <title>My Posts</title>
+  <style>
+    h1{
+        font-size: 2em;
+        font-weight: 2px;
+    }
+  </style>
 </head>
 <body>
     @include('layouts.navigation')
     <div class="container">
+        <div class="m-3">
+            <h1>My Posts</h1>
+        </div>
+       
         @foreach ($user_posts as $user_post )
-
         <div class="card m-3">
             <div class="card-body">
               <blockquote class="blockquote mb-0">

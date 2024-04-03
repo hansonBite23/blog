@@ -22,6 +22,6 @@ class DashboardController extends Controller
             abort(404); // Or handle the case when the post is not found
         }
 
-        return view('post.view_post', compact('viewPost'));
+        return view('post.view.view_post', compact('viewPost'));
     }
 }

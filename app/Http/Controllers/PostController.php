@@ -6,6 +6,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+// FOR AUTH USERS
 class PostController extends Controller
 {
     /**
@@ -21,7 +23,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $user_posts =   Post::all()->where('user_id', Auth::id());
+        $user_posts =  Post::all()->where('user_id', Auth::id());
         return view('post.index')->with('user_posts', $user_posts);
     }
 
@@ -70,7 +72,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $edit_post = Post::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
+        //dd($post);
+        return view('post.edit')->with('edit_post', $edit_post);
     }
 
     /**
@@ -78,7 +82,17 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required'
+        ]);
+
+        Post::where('id', $id)->update([
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
+
+        return to_route('post.show', $id);
     }
 
     /**
