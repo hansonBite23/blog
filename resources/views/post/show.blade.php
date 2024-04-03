@@ -25,6 +25,11 @@
 
    <div class="container my-3">
     <div class="content">
+
+<a href="{{route('post.index')}}" class="btn btn-success"> Go Back</a>
+
+
+
         <form action="{{route('post.edit', $posts->id)}}" method="get">
         @csrf
         @method('get')

@@ -23,16 +23,19 @@
 
    <div class="container my-3">
     <div class="content">
+
+
+
         <form action="{{route('post.update', $edit_post->id) }}" method="post">
             @csrf
             @method('put')
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
-                <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title" value="{{$edit_post->title}}" required>
+                <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title" value="{{$edit_post->title}}" >
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Body</label>
-                <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3" required>{{$edit_post->body}}</textarea>
+                <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3" >{{$edit_post->body}}</textarea>
               </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

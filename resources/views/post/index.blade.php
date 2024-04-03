@@ -33,6 +33,7 @@
                <a href="{{route('post.show', $user_post->id)}}">{{$user_post->title}}</a>
                </blockquote>
                <p>Posted at: {{$user_post->created_at->format('M d, Y')}}</p>
+               <p>Last Edit: {{$user_post->updated_at}}</p>
             </div>
           </div>
         
