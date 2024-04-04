@@ -83,7 +83,7 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|max:255',
             'body' => 'required'
         ]);
 
@@ -100,6 +100,9 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $delete_id = Post::find($id);
+        $delete_id->delete();
+
+        return to_route('post.index');
     }
 }

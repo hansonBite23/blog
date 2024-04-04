@@ -22,10 +22,15 @@
 <body>
     @include('layouts.navigation')
     <div class="container">
+      
         <div class="m-3">
             <h1>My Posts</h1>
-        </div>
-       
+            <a href="{{route('post.create')}}" class="btn btn-primary float-end">Post Blog</a>
+          <br>
+    </div>
+
+
+       <div>
         @foreach ($user_posts as $user_post )
         <div class="card m-3">
             <div class="card-body">
@@ -36,10 +41,8 @@
                <p>Last Edit: {{$user_post->updated_at}}</p>
             </div>
           </div>
-        
-        {{-- {{$user_post->body}}
-        {{$user_post->user->name}} --}}
     @endforeach
+  </div>
     </div>
    
 </body>

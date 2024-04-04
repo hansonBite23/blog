@@ -5,10 +5,11 @@
         </h2>
     </x-slot>
     
-        
+        @if(Auth::id())
     <div class="container my-3">
         <a href="{{route('post.create')}}" class="btn btn-primary float-end">Post Blog</a>
     </div>
+    @endif
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
